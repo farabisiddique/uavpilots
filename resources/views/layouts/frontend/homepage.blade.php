@@ -38,6 +38,8 @@
                       <p>A DronePilots verified profile is the perfect tool for helping drone pilots from all industries showcase themselves and their companies in an attention-grabbing context.  Whether you want to drum up new customers, find sponsors, or build your personal brand – it’s all easier with your own dedicated verified profile.</p>
                     </div>
 
+                    {{ $ApprovedUsersData }}
+
 <!--                     <div class="container-fluid d-flex justify-content-center mt-5">
                       <p>A DronePilots verified profile is the perfect tool for helping drone pilots from all industries showcase themselves and their companies in an attention-grabbing context.</p>
                     </div> -->

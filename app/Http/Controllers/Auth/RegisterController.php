@@ -103,6 +103,9 @@ class RegisterController extends Controller
                         'username' => $data['username'],
                     ]);
 
+                    
+                    
+
 
                 } 
                 catch(ValidationException $e)
@@ -121,17 +124,38 @@ class RegisterController extends Controller
                 }
 
                 try {
+
+                    // $user_data_key = DB::table('files')->latest('upload_time')->first();
+
+
+
+                    // $user_data_key = 5;
+
+                    
+
+                    // $fara = DB::table('users')->latest()->first()->id;
+
+
+                    // $fara = User::latest();
+
+                    // $model = $fara->first()->id;
+
+                    // dd($model);
+
+
                     // Validate, then create if valid
                     $user_data_add = UserData::create([
-                        'user_data_id' => $user_add->id(),           
+                        'user_data_id' => '8',           
                         'first_name' => $data['first_name'],
                         'last_name' => $data['last_name'],
                         'description' => $data['description'],
                         'state' => $data['state'],
                         'country' => $data['country'],
-                        'industry' => $data['industry'],
+                        'industry' => $data['industry']
                         
                     ]);
+
+                    // dd($user_data_id);
                 } 
                 catch(ValidationException $e)
                 {

@@ -5,11 +5,10 @@
  <script src="{{ asset('libs/jquery/dist/jquery.min.js') }}"></script>
  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" defer></script> 
  <script src="{{ asset('js/datatable.js') }}"></script>
+ <script src="{{ asset('js/approveordeclineUsersAjax.js') }}"></script>
 
 
 @section('content')
-
-
 
 
 
@@ -35,13 +34,16 @@
     <div class="page-content page-container" id="page-content">
       <div class="padding">
 
+        
+
       <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>E-mail</th>
-                <th>Country</th>
-                <th>State</th>
+                <th>Location</th>
+                <!-- <th>Country</th>
+                <th>State</th> -->
                 <th>Industry</th>
                 <th>Description</th>
                 <th>Facebook</th>
@@ -55,53 +57,29 @@
             </tr>
         </thead>
         <tbody>
+   
+@foreach ($PendingUsers as $PendingUser)
 
 
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
+
+            <tr id="trid{{ $PendingUser->id }}">
+                <td>{{ $PendingUser->first_name }} {{ $PendingUser->last_name }}</td>
+                <td>{{ $PendingUser->email }}</td>
+                <td>{{ $PendingUser->state }},{{ $PendingUser->country }}</td>
+                
+                <!-- <td>{{ $PendingUser->country }}</td>
+                <td>{{ $PendingUser->state }}</td> -->
+                <td>{{ $PendingUser->industry }}</td>
+                <td>{{ $PendingUser->description }}</td>
                 <td>61</td>
                 <td>61</td>
+                <td>61</td>
+                <td>61</td>
+                <td>{{ $PendingUser->username }}</td>
+                <td>{{ $PendingUser->created_at }}</td>
+                <td class="buttonbox"><button type="button" class="btn btn-success mb-2 approve_button" id="{{ $PendingUser->id }}">Approve</button> <button type="button" class="btn btn-danger delete_button" id="{{ $PendingUser->id }}">Delete</button></td>
             </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-            </tr>
-            <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-                <td>61</td>
-            </tr>
+@endforeach
 
         </tbody>
         <tfoot>
@@ -109,23 +87,6 @@
 
         </tfoot>
     </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

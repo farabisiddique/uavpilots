@@ -5,6 +5,7 @@
         <title>UVApilots</title>
         <meta name="description" content="Responsive, Bootstrap, BS4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="_token" content="{{ csrf_token() }}"/>
         <!-- style -->
         <!-- build:css {{ asset('css/basik_css/site.min.css') }} -->
         <link rel="stylesheet" href="{{ asset('css/basik_css/bootstrap.css') }}" type="text/css" />

@@ -11,7 +11,7 @@
           </g>
         </svg>
         <!-- <img src="../assets/img/logo.png" alt="..."> -->
-        <span class="hidden-folded d-inline l-s-n-1x align-self-center">SKYBLUR</span>
+        <span class="hidden-folded d-inline l-s-n-1x align-self-center">UAVpilots</span>
       </a>
       <!-- / brand -->
     </div>
@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="text-center text-muted">&copy; Copyright. Skyblur</div>
+    <div class="text-center text-muted">&copy; Copyright. UAVpilots</div>
   </div>
 </div>
 @endsection

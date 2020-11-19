@@ -17,7 +17,7 @@ class CreateUserDataTable extends Migration
             // $table->id();
             $table->unsignedBigInteger('user_data_id');
 
-            $table->foreign('user_data_id')->references('id')->on('users');
+            $table->foreign('user_data_id')->references('id')->on('users')->onDelete('cascade');;
 
             // $table->unsignedBigInteger('user_data_id');
             // $table->foreignId('user_data_id')->constrained('users');            

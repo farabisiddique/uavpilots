@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lib\ApiRequest;
+use App\Models\User;
+use App\Models\UserData;
 
 class FrontendController extends Controller
 {
     //
     public function homepage()
-    {
-        return view('layouts.frontend.homepage');
+    {   
+        $ApprovedUsersData = $this->getApprovedUsersData();
+        return view('layouts.frontend.homepage',compact('ApprovedUsersData'));
     }
     public function test()
     {
@@ -35,4 +38,19 @@ class FrontendController extends Controller
     {
         return view('layouts.frontend.singlepage');
     }
+
+
+        protected function getApprovedUsersData()
+    {   
+
+
+        $ApprovedUsersData = User::where('approval_status', 1)
+                        ->leftJoin('user_data', 'id', '=', 'user_data.user_data_id')
+                        ->get();
+
+        return $ApprovedUsersData;
+    }
+
+
+
 }

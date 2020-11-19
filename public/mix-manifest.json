@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/approveordeclineUsersAjax.js": "/js/approveordeclineUsersAjax.js",
     "/js/datatable.js": "/js/datatable.js",
     "/js/datatable_home.js": "/js/datatable_home.js",
     "/js/signup.js": "/js/signup.js"

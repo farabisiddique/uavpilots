@@ -96,7 +96,7 @@
     </div>
 
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a class="text-white" href="{{ route('homepage') }}"> SKYBLUR</a>
+      <a class="text-white" href="{{ route('homepage') }}"> UAVpilots</a>
     </div>
   </footer>
 </section>

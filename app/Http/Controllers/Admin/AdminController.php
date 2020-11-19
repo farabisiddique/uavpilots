@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 // use Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
+use App\Models\User;
+use App\Models\UserData;
 use Hash;
 use App\Http\Requests\AdminLoginRequest;
 use App\Http\Requests\UploadAdminProfile;
@@ -29,19 +31,42 @@ class AdminController extends Controller
     {
         $credentials = $request->only('email', 'password');
         $remember = ($request->input('remember') == '1') ? true : false;
+
         if (Auth::guard('admin')->attempt($credentials, $remember)) {
+
+
+               // $PendingUsers = $this->getPendingUsers();
+            // $PendingUsers = User::where('approval_status', 0);
+            // $find_pending_user_id = $PendingUsers->id;
+            // $PendingUserData = UserData::where('user_data_id', $find_pending_user_id);
+
+            // $pending_users = getPendingUserData();
+
             return redirect()->intended('admin/dashboard');
+            // return redirect()->intended('admin/dashboard')->with('pending_users', $PendingUsers);
+
         } else {
             $request->session()->flash('error', 'Credential is not correct');
             return redirect()->back();
         }
+
+
+
+                 
+
+               
     }
 
     public function dashboard()
     {
         $adminDetails = $this->getAdminDetails();
-        return view('layouts.admin.home', compact('adminDetails'));
+        $PendingUsers = $this->getPendingUsers();
+        return view('layouts.admin.home', compact('adminDetails','PendingUsers'));
     }
+
+
+    
+
 
     public function settings()
     {
@@ -54,6 +79,18 @@ class AdminController extends Controller
         $adminDetails = Admin::where('email', Auth::guard('admin')->user()->email)->first();
         return $adminDetails;
     }
+
+    protected function getPendingUsers()
+    {   
+
+
+        $PendingUsers = User::where('approval_status', 0)
+                        ->leftJoin('user_data', 'id', '=', 'user_data.user_data_id')
+                        ->get();
+
+        return $PendingUsers;
+    }
+
 
     public function chkCurrentPwd(Request $request)
     {
@@ -83,4 +120,44 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         return redirect('/admin');
     }
+
+
+        public function approveUser()
+    {
+        // $data = $request->all();
+
+        $data = $_POST['approve_id'];
+        // Admin::checkPassword($data['current_pwd']);
+
+
+
+        $PendingUsers = User::where('id', $data)
+                        ->update(['approval_status' => true]);
+                        
+
+
+        return $data;
+    }
+
+
+        public function removeUser()
+    {
+        // $data = $request->all();
+
+        $data = $_POST['delete_id'];
+        // Admin::checkPassword($data['current_pwd']);
+
+
+
+        $deleteUser = User::where('id', $data)
+                        ->delete();
+
+        $deleteUserData = UserData::where('user_data_id', $data)
+                        ->delete();
+                        
+
+
+        return $data;
+    }
+
 }

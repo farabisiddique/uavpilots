@@ -11,7 +11,7 @@
           </g>
         </svg>
         <!-- <img src="{{asset('basik_img/img/logo.png') }}" alt="..."> -->
-        <span class="hidden-folded d-inline l-s-n-1x ">Skyblur</span>
+        <span class="hidden-folded d-inline l-s-n-1x ">UAVpilots</span>
       </a>
       <!-- / brand -->
     </div>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <!-- sidenav bottom -->
-    <div class="no-shrink ">
+<!--     <div class="no-shrink ">
       <div class="p-3 d-flex align-items-center">
         <div class="text-sm hidden-folded text-muted">
           Trial: 35%
@@ -44,7 +44,7 @@
           <div class="progress-bar gd-success" style="width: 35%"></div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 <!-- ############ Aside END-->

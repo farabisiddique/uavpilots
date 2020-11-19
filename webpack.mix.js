@@ -15,4 +15,10 @@ mix.js('resources/js/app.js', 'public/js')
 	.js('resources/js/signup.js', 'public/js')
 	.js('resources/js/datatable.js', 'public/js')
 	.js('resources/js/datatable_home.js', 'public/js')
+	.js('resources/js/approveordeclineUsersAjax.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+
+
+
+    

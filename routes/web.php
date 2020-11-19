@@ -45,6 +45,9 @@ Route::prefix('/admin')->namespace("Admin")->group(function () {
         Route::post('update-pwd', 'AdminController@updatePwd');
         Route::post('update-profile-img', 'AdminController@updateProfileimg')->name('admin.profile.img');
         Route::get('logout', 'AdminController@logout')->name('admin.logout');
+
+        Route::post('approve_user','AdminController@approveUser');
+        Route::post('remove_user','AdminController@removeUser');
     });
 });
 
@@ -52,7 +55,7 @@ Route::prefix('/admin')->namespace("Admin")->group(function () {
 
 Route::get('/{username}', [userProfileController::class, 'show']);
 
-Route::get('ajax', function(){ return view('ajax'); });
+// Route::get('/ajax', function(){ return view('ajaxtest'); });
 
-Route::post('/postajax','AjaxController@post');
+
 

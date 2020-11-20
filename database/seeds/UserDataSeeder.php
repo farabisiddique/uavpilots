@@ -21,6 +21,22 @@ class UserDataSeeder extends Seeder
             [
                 'user_data_id'=>2,'first_name'=>'Nick', 'last_name'=>'Fury', 'description'=>'bla bla bla bla bla','state'=>'California','country'=>'USA','industry'=>'SHIELD','photo_link'=>'linkdao'
             ],
+
+            [
+                'user_data_id'=>3,'first_name'=>'Phill', 'last_name'=>'Coulson', 'description'=>'bla bla bla bla bla','state'=>'California','country'=>'USA','industry'=>'SHIELD','photo_link'=>'linkdao'
+            ],
+
+            [
+                'user_data_id'=>4,'first_name'=>'Maria', 'last_name'=>'Hill', 'description'=>'bla bla bla bla bla','state'=>'California','country'=>'USA','industry'=>'SHIELD','photo_link'=>'linkdao'
+            ],
+
+            [
+                'user_data_id'=>5,'first_name'=>'Steve', 'last_name'=>'Rogers', 'description'=>'bla bla bla bla bla','state'=>'California','country'=>'USA','industry'=>'SHIELD','photo_link'=>'linkdao'
+            ],
+
+            [
+                'user_data_id'=>6,'first_name'=>'Thor', 'last_name'=>'Odinson', 'description'=>'bla bla bla bla bla','state'=>'California','country'=>'USA','industry'=>'SHIELD','photo_link'=>'linkdao'
+            ],
             
         ];
         foreach ($user_data_records as $key => $record) {

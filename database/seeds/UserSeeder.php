@@ -29,6 +29,26 @@ class UserSeeder extends Seeder
                 'id' => 2, 'email' => 'fury@shield.com', 'password' => $password, 'username' => 'nickfury'
             ],
 
+            [
+
+                'id' => 3, 'email' => 'coulson@shield.com', 'password' => $password, 'username' => 'agentcoulson'
+            ],
+
+            [
+
+                'id' => 4, 'email' => 'mariahill@shield.com', 'password' => $password, 'username' => 'agenthill'
+            ],
+
+            [
+
+                'id' => 5, 'email' => 'cap@shield.com', 'password' => $password, 'username' => 'cap'
+            ],
+
+            [
+
+                'id' => 6, 'email' => 'thor@shield.com', 'password' => $password, 'username' => 'thor'
+            ],
+
         ];
         foreach ($usersrecords as $key => $record) {
             # code...

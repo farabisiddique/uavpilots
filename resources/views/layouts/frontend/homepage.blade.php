@@ -6,6 +6,7 @@
   
  <script src="{{ asset('libs/jquery/dist/jquery.min.js') }}"></script>
  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" defer></script> 
+ <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js" defer></script> 
  <script src="{{ asset('js/datatable_home.js') }}"></script>
 
 
@@ -38,7 +39,7 @@
                       <p>A DronePilots verified profile is the perfect tool for helping drone pilots from all industries showcase themselves and their companies in an attention-grabbing context.  Whether you want to drum up new customers, find sponsors, or build your personal brand – it’s all easier with your own dedicated verified profile.</p>
                     </div>
 
-                    {{ $ApprovedUsersData }}
+                    
 
 <!--                     <div class="container-fluid d-flex justify-content-center mt-5">
                       <p>A DronePilots verified profile is the perfect tool for helping drone pilots from all industries showcase themselves and their companies in an attention-grabbing context.</p>
@@ -49,7 +50,7 @@
 
 
 
-                    <div class="container-fluid d-flex justify-content-center mt-5">
+                    <div class="container-fluid d-flex mt-5">
 
                                 <table id="example" class="display" style="width:100%">
                                       <thead>
@@ -61,13 +62,16 @@
                                           </tr>
                                       </thead>
                                       <tbody>
+                                        @foreach ($ApprovedUsersData as $ApprovedUser)
                                           <tr>
-                                              <td><a href="/profile">Tiger Nixon</a></td>
-                                              <td>System Architect</td>
-                                              <td>Edinburgh</td>
+                                              <td><a href="/profile">{{ $ApprovedUser->first_name }} {{ $ApprovedUser->last_name }}</a></td>
+                                              <td>{{ $ApprovedUser->industry }}</td>
+                                              <td>{{ $ApprovedUser->state }}, {{ $ApprovedUser->country }}</td>
                                               
                                           </tr>
-                                          <tr>
+                                          @endforeach
+
+<!--                                           <tr>
                                               <td><a href="/profile">Garrett Winters</a></td>
                                               <td>Accountant</td>
                                               <td>Tokyo</td>
@@ -84,11 +88,11 @@
                                               <td>Senior Javascript Developer</td>
                                               <td>Edinburgh</td>
                                               
-                                          </tr>
+                                          </tr> -->
 
                                       </tbody>
                                       <tfoot>
-
+                                        <th></th>
                                       </tfoot>
                                 </table>
                 

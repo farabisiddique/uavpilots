@@ -11033,10 +11033,24 @@ button:hover {
 }
 
 .visitbuttondiv {
-  width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .visitbutton {
-  width: 100%;
+  color: black !important;
+  background-color: white !important;
+  border-color: black !important;
+  font-weight: bold !important;
+}
+
+.visitbutton:hover {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+}
+
+.user_name_class {
+  font-family: "Abril Fatface";
+  font-weight: 400;
 }
 

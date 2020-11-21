@@ -30,7 +30,7 @@ class UserData extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'description', 'state', 'country', 'industry',
+        'user_data_id','first_name', 'last_name', 'description', 'state', 'country', 'industry',
     ];
 
 

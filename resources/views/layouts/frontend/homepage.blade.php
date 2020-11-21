@@ -64,7 +64,7 @@
                                       <tbody>
                                         @foreach ($ApprovedUsersData as $ApprovedUser)
                                           <tr>
-                                              <td><a href="/profile">{{ $ApprovedUser->first_name }} {{ $ApprovedUser->last_name }}</a></td>
+                                              <td><a href="/{{ $ApprovedUser->username }}">{{ $ApprovedUser->first_name }} {{ $ApprovedUser->last_name }}</a></td>
                                               <td>{{ $ApprovedUser->industry }}</td>
                                               <td>{{ $ApprovedUser->state }}, {{ $ApprovedUser->country }}</td>
                                               

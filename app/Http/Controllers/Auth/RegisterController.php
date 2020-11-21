@@ -145,7 +145,7 @@ class RegisterController extends Controller
 
                     // Validate, then create if valid
                     $user_data_add = UserData::create([
-                        'user_data_id' => '8',           
+                        'user_data_id' => 1,           
                         'first_name' => $data['first_name'],
                         'last_name' => $data['last_name'],
                         'description' => $data['description'],
